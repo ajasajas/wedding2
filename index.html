@@ -156,21 +156,19 @@
 
       <!-- Left Gate Door -->
       <div class="gate-door-left relative w-1/2 h-full bg-[#445246] border-r border-[#c5a059]/70 shadow-2xl flex flex-col justify-between p-4 sm:p-12">
-        <!-- Top Botanical Foliage Engraving -->
         <svg class="w-full max-w-sm mx-auto h-40 opacity-25 text-[#c5a059]" viewBox="0 0 100 100" fill="none" stroke="currentColor">
           <path d="M10,10 Q50,30 20,80 M20,20 Q60,50 30,90" stroke-width="1.2" stroke-linecap="round"/>
           <circle cx="20" cy="80" r="2.5" fill="currentColor"/>
           <circle cx="30" cy="90" r="2.5" fill="currentColor"/>
         </svg>
 
-        <!-- Left Arabic Text: Single Line, Sized to Avoid Badge Contact -->
+        <!-- Left Arabic Text -->
         <div class="absolute top-1/2 -translate-y-1/2 left-1 sm:left-4 pr-[92px] sm:pr-[115px] text-center w-full flex justify-center items-center">
           <p class="font-arabic text-[13px] sm:text-2xl text-[#f2e5cb] whitespace-nowrap tracking-normal drop-shadow">
             بِسْمِ اللَّهِ
           </p>
         </div>
 
-        <!-- Bottom Botanical Foliage Engraving -->
         <svg class="w-full max-w-sm mx-auto h-40 opacity-25 text-[#c5a059] rotate-180" viewBox="0 0 100 100" fill="none" stroke="currentColor">
           <path d="M10,10 Q50,30 20,80 M20,20 Q60,50 30,90" stroke-width="1.2" stroke-linecap="round"/>
         </svg>
@@ -178,27 +176,25 @@
 
       <!-- Right Gate Door -->
       <div class="gate-door-right relative w-1/2 h-full bg-[#445246] border-l border-[#c5a059]/70 shadow-2xl flex flex-col justify-between p-4 sm:p-12">
-        <!-- Top Botanical Foliage Engraving -->
         <svg class="w-full max-w-sm mx-auto h-40 opacity-25 text-[#c5a059] scale-x-[-1]" viewBox="0 0 100 100" fill="none" stroke="currentColor">
           <path d="M10,10 Q50,30 20,80 M20,20 Q60,50 30,90" stroke-width="1.2" stroke-linecap="round"/>
           <circle cx="20" cy="80" r="2.5" fill="currentColor"/>
           <circle cx="30" cy="90" r="2.5" fill="currentColor"/>
         </svg>
 
-        <!-- Right Arabic Text: Single Line, Sized to Avoid Badge Contact -->
+        <!-- Right Arabic Text -->
         <div class="absolute top-1/2 -translate-y-1/2 right-1 sm:right-4 pl-[92px] sm:pl-[115px] text-center w-full flex justify-center items-center">
           <p class="font-arabic text-[13px] sm:text-2xl text-[#f2e5cb] whitespace-nowrap tracking-normal drop-shadow">
             الرَّحْمَٰنِ الرَّحِيمِ
           </p>
         </div>
 
-        <!-- Bottom Botanical Foliage Engraving -->
         <svg class="w-full max-w-sm mx-auto h-40 opacity-25 text-[#c5a059] scale-x-[-1] rotate-180" viewBox="0 0 100 100" fill="none" stroke="currentColor">
           <path d="M10,10 Q50,30 20,80 M20,20 Q60,50 30,90" stroke-width="1.2" stroke-linecap="round"/>
         </svg>
       </div>
 
-      <!-- Center Gold Scalloped Royal Badge (Full Size Preserved) -->
+      <!-- Center Badge -->
       <button id="centerBadge" onclick="openGate()" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 group cursor-pointer" aria-label="Tap to open invitation">
         <div class="relative w-44 h-56 sm:w-52 sm:h-68 bg-[#2a342b] rounded-full border-2 border-[#c5a059] shadow-2xl flex flex-col items-center justify-center p-4 transition-all duration-500 group-hover:scale-105 group-hover:border-[#f2e5cb]">
           <div class="absolute inset-2 rounded-full border border-dashed border-[#c5a059]/60 pointer-events-none"></div>
@@ -439,13 +435,32 @@
     </div>
   </section>
 
+  <!-- Mobile Image Preview Modal (Universal Fallback for Mobile WebKit) -->
+  <div id="imagePreviewModal" class="fixed inset-0 z-[100] bg-black/85 backdrop-blur-sm hidden flex-col items-center justify-center p-4">
+    <div class="bg-[#2a342b] border border-[#c5a059]/60 rounded-3xl p-4 sm:p-6 max-w-sm w-full text-center space-y-3 relative shadow-2xl">
+      <button onclick="closeModal()" type="button" class="absolute top-3 right-3 text-[#c8d2c8] hover:text-white p-2">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+      <p class="font-cinzel text-xs text-[#f2e5cb] font-semibold tracking-wider uppercase">Card Ready</p>
+      <p class="font-serif italic text-xs text-[#c8d2c8]">Press &amp; hold the image below to "Save to Photos" or Share.</p>
+      <div class="rounded-xl overflow-hidden border border-[#c5a059]/40 max-h-[55vh]">
+        <img id="modalImgPreview" class="w-full h-auto object-contain mx-auto" alt="Wedding Invitation Card" />
+      </div>
+      <button onclick="closeModal()" type="button" class="w-full bg-gradient-to-r from-[#c5a059] to-[#9d7c3b] text-[#1f2720] font-cinzel text-xs font-bold py-2.5 rounded-full uppercase tracking-wider">
+        Done
+      </button>
+    </div>
+  </div>
+
   <!-- Footer -->
   <footer class="py-10 border-t border-[#c5a059]/25 text-center space-y-1">
     <p class="font-cinzel text-[10px] tracking-widest text-[#c8d2c8] uppercase">With Warm Regards</p>
     <p class="font-serif italic text-lg sm:text-xl gold-gradient-text font-medium">Punathil Family</p>
   </footer>
 
-  <!-- Unified Interactive Engine & Card Generator -->
+  <!-- Unified Interactive Engine & Bulletproof Card Generator -->
   <script>
     const coverContainer = document.getElementById("coverContainer");
     const audio = document.getElementById("bgAudio");
@@ -512,7 +527,7 @@
       ctx.beginPath();
       ctx.moveTo(x + radius, y);
       ctx.lineTo(x + width - radius, y);
-      ctx.quadraticCurveTo(x + width, y + radius);
+      ctx.quadraticCurveTo(x + width, y + height, x + width, y + radius);
       ctx.lineTo(x + width, y + height - radius);
       ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
       ctx.lineTo(x + radius, y + height);
@@ -522,170 +537,176 @@
       ctx.closePath();
     }
 
-    // Canvas Card Generator
-    async function generateCardCanvas() {
+    function closeModal() {
+      document.getElementById("imagePreviewModal").classList.add("hidden");
+      document.getElementById("imagePreviewModal").classList.remove("flex");
+    }
+
+    // High-Resolution 2D Canvas Generator (Optimized for Mobile RAM)
+    function generateCardCanvas() {
       const canvas = document.createElement("canvas");
       const ctx = canvas.getContext("2d");
       
-      const width = 1200;
-      const height = 1850;
+      const width = 1080;
+      const height = 1660;
       canvas.width = width;
       canvas.height = height;
 
-      // Deep Royal Sage Green Canvas Background
+      // Base Background
       const bgGrad = ctx.createRadialGradient(width / 2, height / 3, 50, width / 2, height / 2, width * 0.85);
       bgGrad.addColorStop(0, "#445246");
       bgGrad.addColorStop(1, "#1c241d");
       ctx.fillStyle = bgGrad;
       ctx.fillRect(0, 0, width, height);
 
-      // Gold Arched Framing
+      // Gold Frames
       ctx.strokeStyle = "#c5a059";
       ctx.lineWidth = 4;
-      drawRoundedRect(ctx, 45, 45, width - 90, height - 90, 48);
+      drawRoundedRect(ctx, 40, 40, width - 80, height - 80, 42);
       ctx.stroke();
 
       ctx.strokeStyle = "rgba(197, 160, 89, 0.45)";
       ctx.lineWidth = 1.5;
-      drawRoundedRect(ctx, 62, 62, width - 124, height - 124, 38);
+      drawRoundedRect(ctx, 55, 55, width - 110, height - 110, 32);
       ctx.stroke();
 
       ctx.textAlign = "center";
 
       // Bismillah
       ctx.fillStyle = "#fbf4e6";
-      ctx.font = '48px "Amiri", serif';
-      ctx.fillText("بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ", width / 2, 175);
+      ctx.font = '44px "Amiri", serif';
+      ctx.fillText("بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ", width / 2, 160);
 
       ctx.strokeStyle = "#c5a059";
       ctx.lineWidth = 1.5;
       ctx.beginPath();
-      ctx.moveTo(width / 2 - 120, 220);
-      ctx.lineTo(width / 2 + 120, 220);
+      ctx.moveTo(width / 2 - 100, 200);
+      ctx.lineTo(width / 2 + 100, 200);
       ctx.stroke();
 
       ctx.fillStyle = "#c5a059";
-      ctx.font = '18px "Cinzel", serif';
-      ctx.fillText("✦ ❁ ✦", width / 2, 227);
+      ctx.font = '16px "Cinzel", serif';
+      ctx.fillText("✦ ❁ ✦", width / 2, 206);
 
-      // Notice
+      // Header Notice
       ctx.fillStyle = "#c5a059";
-      ctx.font = '600 22px "Cinzel", serif';
+      ctx.font = '600 20px "Cinzel", serif';
       ctx.letterSpacing = "6px";
-      ctx.fillText("WEDDING INVITATION", width / 2, 280);
+      ctx.fillText("WEDDING INVITATION", width / 2, 255);
       ctx.letterSpacing = "0px";
 
       ctx.fillStyle = "#c8d2c8";
-      ctx.font = 'italic 26px "Playfair Display", serif';
-      ctx.fillText("Together with our beloved families", width / 2, 335);
+      ctx.font = 'italic 24px "Playfair Display", serif';
+      ctx.fillText("Together with our beloved families", width / 2, 305);
 
       // Monogram
       ctx.fillStyle = "#f2e5cb";
-      ctx.font = 'italic 400 115px "Playfair Display", serif';
-      ctx.fillText("A", width / 2 - 80, 485);
+      ctx.font = 'italic 400 100px "Playfair Display", serif';
+      ctx.fillText("A", width / 2 - 70, 440);
 
       ctx.fillStyle = "#c5a059";
-      ctx.font = '100px "Great Vibes", cursive';
-      ctx.fillText("&", width / 2, 485);
+      ctx.font = '90px "Great Vibes", cursive';
+      ctx.fillText("&", width / 2, 440);
 
       ctx.fillStyle = "#f2e5cb";
-      ctx.font = 'italic 400 115px "Playfair Display", serif';
-      ctx.fillText("S", width / 2 + 80, 485);
+      ctx.font = 'italic 400 100px "Playfair Display", serif';
+      ctx.fillText("S", width / 2 + 70, 440);
 
       // Groom
       ctx.fillStyle = "#ffffff";
-      ctx.font = 'italic 500 58px "Playfair Display", serif';
-      ctx.fillText("Muhammed Ajas", width / 2, 605);
+      ctx.font = 'italic 500 52px "Playfair Display", serif';
+      ctx.fillText("Muhammed Ajas", width / 2, 545);
 
       ctx.fillStyle = "#c5a059";
-      ctx.font = '36px "Amiri", serif';
-      ctx.fillText("محمد أجاس", width / 2, 660);
+      ctx.font = '32px "Amiri", serif';
+      ctx.fillText("محمد أجاس", width / 2, 595);
 
       ctx.fillStyle = "#c8d2c8";
-      ctx.font = 'italic 400 23px "Playfair Display", serif';
-      ctx.fillText("Son of Mr. Abdul Azeez & Mrs. Sufaira", width / 2, 705);
+      ctx.font = 'italic 400 21px "Playfair Display", serif';
+      ctx.fillText("Son of Mr. Abdul Azeez & Mrs. Sufaira", width / 2, 635);
 
       ctx.fillStyle = "#c5a059";
-      ctx.font = '52px "Great Vibes", cursive';
-      ctx.fillText("&", width / 2, 775);
+      ctx.font = '48px "Great Vibes", cursive';
+      ctx.fillText("&", width / 2, 698);
 
       // Bride
       ctx.fillStyle = "#ffffff";
-      ctx.font = 'italic 500 58px "Playfair Display", serif';
-      ctx.fillText("Saniya Sabah", width / 2, 850);
+      ctx.font = 'italic 500 52px "Playfair Display", serif';
+      ctx.fillText("Saniya Sabah", width / 2, 765);
 
       ctx.fillStyle = "#c5a059";
-      ctx.font = '36px "Amiri", serif';
-      ctx.fillText("سانية صباح", width / 2, 905);
+      ctx.font = '32px "Amiri", serif';
+      ctx.fillText("سانية صباح", width / 2, 815);
 
       ctx.fillStyle = "#c8d2c8";
-      ctx.font = 'italic 400 23px "Playfair Display", serif';
-      ctx.fillText("Daughter of Mr. Sabah & Mrs. Faseema", width / 2, 950);
+      ctx.font = 'italic 400 21px "Playfair Display", serif';
+      ctx.fillText("Daughter of Mr. Sabah & Mrs. Faseema", width / 2, 855);
 
-      // Invitation Text
+      // Text
       ctx.fillStyle = "#e5e9e5";
-      ctx.font = 'italic 400 26px "Playfair Display", serif';
-      ctx.fillText("Cordially invite you to celebrate the joyous occasion", width / 2, 1050);
-      ctx.fillText("of our Nikah ceremony", width / 2, 1090);
+      ctx.font = 'italic 400 24px "Playfair Display", serif';
+      ctx.fillText("Cordially invite you to celebrate the joyous occasion", width / 2, 945);
+      ctx.fillText("of our Nikah ceremony", width / 2, 980);
 
-      // Box
-      const boxW = 860;
-      const boxH = 250;
+      // Ceremony Box
+      const boxW = 780;
+      const boxH = 225;
       const boxX = (width - boxW) / 2;
-      const boxY = 1145;
+      const boxY = 1030;
 
       ctx.fillStyle = "rgba(35, 44, 37, 0.85)";
-      drawRoundedRect(ctx, boxX, boxY, boxW, boxH, 20);
+      drawRoundedRect(ctx, boxX, boxY, boxW, boxH, 18);
       ctx.fill();
 
       ctx.strokeStyle = "rgba(197, 160, 89, 0.5)";
-      ctx.lineWidth = 2;
-      drawRoundedRect(ctx, boxX, boxY, boxW, boxH, 20);
+      ctx.lineWidth = 1.5;
+      drawRoundedRect(ctx, boxX, boxY, boxW, boxH, 18);
       ctx.stroke();
 
       ctx.fillStyle = "#ffffff";
-      ctx.font = 'italic 600 34px "Playfair Display", serif';
-      ctx.fillText("Saturday, 21 November 2026", width / 2, 1210);
+      ctx.font = 'italic 600 30px "Playfair Display", serif';
+      ctx.fillText("Saturday, 21 November 2026", width / 2, 1088);
 
       ctx.fillStyle = "#f2e5cb";
-      ctx.font = '600 24px "Cinzel", serif';
+      ctx.font = '600 22px "Cinzel", serif';
       ctx.letterSpacing = "2px";
-      ctx.fillText("Nikah Ceremony • 4:30 PM", width / 2, 1255);
+      ctx.fillText("Nikah Ceremony • 4:30 PM", width / 2, 1130);
       ctx.letterSpacing = "0px";
 
       ctx.strokeStyle = "rgba(197, 160, 89, 0.4)";
       ctx.lineWidth = 1;
       ctx.beginPath();
-      ctx.moveTo(width / 2 - 100, 1290);
-      ctx.lineTo(width / 2 + 100, 1290);
+      ctx.moveTo(width / 2 - 80, 1160);
+      ctx.lineTo(width / 2 + 80, 1160);
       ctx.stroke();
 
       ctx.fillStyle = "#ffffff";
-      ctx.font = 'italic 600 32px "Playfair Display", serif';
-      ctx.fillText("Punathil House", width / 2, 1335);
+      ctx.font = 'italic 600 28px "Playfair Display", serif';
+      ctx.fillText("Punathil House", width / 2, 1200);
 
       ctx.fillStyle = "#c8d2c8";
-      ctx.font = 'italic 400 23px "Playfair Display", serif';
-      ctx.fillText("Purameri, Kerala", width / 2, 1368);
+      ctx.font = 'italic 400 21px "Playfair Display", serif';
+      ctx.fillText("Purameri, Kerala", width / 2, 1230);
 
       // Regards
       ctx.fillStyle = "#f2e5cb";
-      ctx.font = '32px "Amiri", serif';
-      ctx.fillText("بارك الله لكما وبارك عليكما وجمع بينكما في خير", width / 2, 1490);
+      ctx.font = '28px "Amiri", serif';
+      ctx.fillText("بارك الله لكما وبارك عليكما وجمع بينكما في خير", width / 2, 1340);
 
       ctx.fillStyle = "#c5a059";
-      ctx.font = '600 20px "Cinzel", serif';
+      ctx.font = '600 18px "Cinzel", serif';
       ctx.letterSpacing = "4px";
-      ctx.fillText("WITH BEST COMPLIMENTS", width / 2, 1575);
+      ctx.fillText("WITH BEST COMPLIMENTS", width / 2, 1415);
       ctx.letterSpacing = "0px";
 
       ctx.fillStyle = "#ffffff";
-      ctx.font = 'italic 600 34px "Playfair Display", serif';
-      ctx.fillText("Punathil Family", width / 2, 1630);
+      ctx.font = 'italic 600 30px "Playfair Display", serif';
+      ctx.fillText("Punathil Family", width / 2, 1465);
 
       return canvas;
     }
 
+    // Direct Browser Download Engine with Safe Fallbacks
     async function downloadInvitationCard() {
       const btnText = document.getElementById("dlBtnText");
       const btnSubtext = document.getElementById("dlBtnSubtext");
@@ -695,34 +716,55 @@
 
       try {
         btn.disabled = true;
-        btnText.textContent = "Generating...";
+        btnText.textContent = "Preparing...";
         btnSubtext.textContent = "Please wait";
         iconNormal.classList.add("hidden");
         iconSpinner.classList.remove("hidden");
 
-        await document.fonts.ready;
+        // Safely await fonts without blocking forever on mobile WebKit
+        await Promise.race([
+          document.fonts.ready,
+          new Promise((resolve) => setTimeout(resolve, 800))
+        ]);
 
-        const canvas = await generateCardCanvas();
-        const blob = await new Promise((resolve) => canvas.toBlob(resolve, "image/png", 1.0));
+        const canvas = generateCardCanvas();
+        const dataUrl = canvas.toDataURL("image/png");
         const filename = "Wedding-Invitation-Muhammed-Ajas-and-Saniya-Sabah.png";
-        const file = new File([blob], filename, { type: "image/png" });
 
         const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || 
                          (navigator.maxTouchPoints > 1 && window.innerWidth <= 1024);
 
-        if (isMobile && navigator.canShare && navigator.canShare({ files: [file] })) {
+        // Mobile Strategy 1: Native Share API if accessible
+        if (isMobile && navigator.share && navigator.canShare) {
           try {
-            await navigator.share({
-              files: [file],
-              title: "Wedding Invitation",
-              text: "Muhammed Ajas & Saniya Sabah Wedding Invitation"
-            });
-            return;
+            const blob = await new Promise((res) => canvas.toBlob(res, "image/png"));
+            if (blob) {
+              const file = new File([blob], filename, { type: "image/png" });
+              if (navigator.canShare({ files: [file] })) {
+                await navigator.share({
+                  files: [file],
+                  title: "Wedding Invitation",
+                  text: "Muhammed Ajas & Saniya Sabah Wedding Invitation"
+                });
+                return;
+              }
+            }
           } catch (shareErr) {
             if (shareErr.name === "AbortError") return;
           }
         }
 
+        // Mobile Strategy 2: In-app Modal Fallback (Bypasses WebKit download blocks)
+        if (isMobile) {
+          document.getElementById("modalImgPreview").src = dataUrl;
+          const modal = document.getElementById("imagePreviewModal");
+          modal.classList.remove("hidden");
+          modal.classList.add("flex");
+          return;
+        }
+
+        // Desktop Strategy: Direct Instant Blob Link Click
+        const blob = await new Promise((res) => canvas.toBlob(res, "image/png"));
         const blobUrl = URL.createObjectURL(blob);
         const link = document.createElement("a");
         link.href = blobUrl;
