@@ -156,21 +156,21 @@
 
       <!-- Left Gate Door -->
       <div class="gate-door-left relative w-1/2 h-full bg-[#445246] border-r border-[#c5a059]/70 shadow-2xl flex flex-col justify-between p-4 sm:p-12">
-        <!-- Full-Size Original Top Botanical Foliage Engraving -->
+        <!-- Top Botanical Foliage Engraving -->
         <svg class="w-full max-w-sm mx-auto h-40 opacity-25 text-[#c5a059]" viewBox="0 0 100 100" fill="none" stroke="currentColor">
           <path d="M10,10 Q50,30 20,80 M20,20 Q60,50 30,90" stroke-width="1.2" stroke-linecap="round"/>
           <circle cx="20" cy="80" r="2.5" fill="currentColor"/>
           <circle cx="30" cy="90" r="2.5" fill="currentColor"/>
         </svg>
 
-        <!-- Left Arabic Text: Positioned on Left Side with Safe Padding -->
-        <div class="absolute top-1/2 -translate-y-1/2 left-2 sm:left-6 pr-24 sm:pr-32 text-center w-full max-w-[140px] sm:max-w-[200px]">
-          <p class="font-arabic text-xl sm:text-3xl text-[#f2e5cb] leading-tight tracking-wide drop-shadow">
-            بِسْمِ<br>اللَّهِ
+        <!-- Left Arabic Text: Single Line, Sized to Avoid Badge Contact -->
+        <div class="absolute top-1/2 -translate-y-1/2 left-1 sm:left-4 pr-[92px] sm:pr-[115px] text-center w-full flex justify-center items-center">
+          <p class="font-arabic text-[13px] sm:text-2xl text-[#f2e5cb] whitespace-nowrap tracking-normal drop-shadow">
+            بِسْمِ اللَّهِ
           </p>
         </div>
 
-        <!-- Full-Size Original Bottom Botanical Foliage Engraving -->
+        <!-- Bottom Botanical Foliage Engraving -->
         <svg class="w-full max-w-sm mx-auto h-40 opacity-25 text-[#c5a059] rotate-180" viewBox="0 0 100 100" fill="none" stroke="currentColor">
           <path d="M10,10 Q50,30 20,80 M20,20 Q60,50 30,90" stroke-width="1.2" stroke-linecap="round"/>
         </svg>
@@ -178,27 +178,27 @@
 
       <!-- Right Gate Door -->
       <div class="gate-door-right relative w-1/2 h-full bg-[#445246] border-l border-[#c5a059]/70 shadow-2xl flex flex-col justify-between p-4 sm:p-12">
-        <!-- Full-Size Original Top Botanical Foliage Engraving -->
+        <!-- Top Botanical Foliage Engraving -->
         <svg class="w-full max-w-sm mx-auto h-40 opacity-25 text-[#c5a059] scale-x-[-1]" viewBox="0 0 100 100" fill="none" stroke="currentColor">
           <path d="M10,10 Q50,30 20,80 M20,20 Q60,50 30,90" stroke-width="1.2" stroke-linecap="round"/>
           <circle cx="20" cy="80" r="2.5" fill="currentColor"/>
           <circle cx="30" cy="90" r="2.5" fill="currentColor"/>
         </svg>
 
-        <!-- Right Arabic Text: Positioned on Right Side with Safe Padding -->
-        <div class="absolute top-1/2 -translate-y-1/2 right-2 sm:right-6 pl-24 sm:pl-32 text-center w-full max-w-[140px] sm:max-w-[200px]">
-          <p class="font-arabic text-xl sm:text-3xl text-[#f2e5cb] leading-tight tracking-wide drop-shadow">
-            الرَّحْمَٰنِ<br>الرَّحِيمِ
+        <!-- Right Arabic Text: Single Line, Sized to Avoid Badge Contact -->
+        <div class="absolute top-1/2 -translate-y-1/2 right-1 sm:right-4 pl-[92px] sm:pl-[115px] text-center w-full flex justify-center items-center">
+          <p class="font-arabic text-[13px] sm:text-2xl text-[#f2e5cb] whitespace-nowrap tracking-normal drop-shadow">
+            الرَّحْمَٰنِ الرَّحِيمِ
           </p>
         </div>
 
-        <!-- Full-Size Original Bottom Botanical Foliage Engraving -->
+        <!-- Bottom Botanical Foliage Engraving -->
         <svg class="w-full max-w-sm mx-auto h-40 opacity-25 text-[#c5a059] scale-x-[-1] rotate-180" viewBox="0 0 100 100" fill="none" stroke="currentColor">
           <path d="M10,10 Q50,30 20,80 M20,20 Q60,50 30,90" stroke-width="1.2" stroke-linecap="round"/>
         </svg>
       </div>
 
-      <!-- Center Gold Scalloped Royal Badge (Full Original Size Preserved) -->
+      <!-- Center Gold Scalloped Royal Badge (Full Size Preserved) -->
       <button id="centerBadge" onclick="openGate()" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 group cursor-pointer" aria-label="Tap to open invitation">
         <div class="relative w-44 h-56 sm:w-52 sm:h-68 bg-[#2a342b] rounded-full border-2 border-[#c5a059] shadow-2xl flex flex-col items-center justify-center p-4 transition-all duration-500 group-hover:scale-105 group-hover:border-[#f2e5cb]">
           <div class="absolute inset-2 rounded-full border border-dashed border-[#c5a059]/60 pointer-events-none"></div>
@@ -214,7 +214,7 @@
         </div>
       </button>
 
-      <!-- Bottom Tagline (Non-Overlapping) -->
+      <!-- Bottom Tagline -->
       <div class="absolute bottom-20 sm:bottom-6 inset-x-0 z-20 flex justify-center px-4 pointer-events-none">
         <div class="bg-[#1f2720]/90 border border-[#c5a059]/40 backdrop-blur-md px-5 py-1.5 rounded-full shadow-lg max-w-[85vw]">
           <p class="font-cinzel text-[10px] sm:text-xs tracking-[0.2em] text-[#f2e5cb] uppercase font-medium text-center truncate">
