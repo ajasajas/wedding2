@@ -77,7 +77,7 @@
       -webkit-backdrop-filter: blur(20px);
     }
 
-    /* iOS-Safe Double Door Glide Animation (No 3D clipping bugs) */
+    /* iOS-Safe Double Door Glide Animation */
     .gate-door-left {
       transition: transform 1.1s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.8s ease 0.3s;
       -webkit-backface-visibility: hidden;
@@ -138,9 +138,7 @@
     <source src="https://marriage-invitation-5m7k.onrender.com/audio/wedding-nasheed.mp3" type="audio/mpeg">
   </audio>
 
-  <!-- ==================================================== -->
-  <!-- ALWAYS VISIBLE FLOATING AUDIO CONTROL (iOS SAFE)     -->
-  <!-- ==================================================== -->
+  <!-- Always Visible Floating Audio Control -->
   <button id="floatingMusicToggle" type="button" class="fixed bottom-6 right-6 z-[60] bg-[#2a342b]/95 border border-[#c5a059]/80 text-[#f2e5cb] p-3.5 rounded-full shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 backdrop-blur-md cursor-pointer flex items-center justify-center" aria-label="Toggle music playback">
     <svg id="mainIconPlay" class="w-5 h-5 hidden text-[#f2e5cb] pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/>
@@ -151,65 +149,73 @@
   </button>
 
   <!-- ==================================================== -->
-  <!-- 1. SPLIT DOUBLE-DOOR GATE FRONT PAGE                 -->
+  <!-- 1. SPLIT DOUBLE-DOOR GATE FRONT PAGE (RESTRUCTURED)  -->
   <!-- ==================================================== -->
   <div id="coverContainer" class="fixed inset-0 z-50 overflow-hidden pointer-events-auto select-none bg-[#1c241d]">
     <div class="relative w-full h-full flex">
 
-      <!-- Left Gate Door -->
-      <div class="gate-door-left w-1/2 h-full bg-[#445246] border-r border-[#c5a059]/70 shadow-2xl flex flex-col justify-between p-4 sm:p-8 pt-8 pb-20">
-        <svg class="w-full max-w-[160px] sm:max-w-xs mx-auto h-28 sm:h-36 opacity-25 text-[#c5a059]" viewBox="0 0 100 100" fill="none" stroke="currentColor">
-          <path d="M10,10 Q50,30 20,80 M20,20 Q60,50 30,90" stroke-width="1.2" stroke-linecap="round"/>
-          <circle cx="20" cy="80" r="2.5" fill="currentColor"/>
-          <circle cx="30" cy="90" r="2.5" fill="currentColor"/>
-        </svg>
-
-        <div class="text-center">
-          <p class="font-arabic text-lg sm:text-2xl text-[#f2e5cb] leading-normal">بِسْمِ اللَّهِ</p>
+      <!-- Left Gate Door: Text Pinned to Top -->
+      <div class="gate-door-left w-1/2 h-full bg-[#445246] border-r border-[#c5a059]/70 shadow-2xl flex flex-col justify-between p-3 sm:p-8 pt-8 sm:pt-14 pb-20">
+        <!-- Top Section: Foliage + Pinned Bismillah -->
+        <div class="space-y-2 text-center">
+          <svg class="w-12 h-12 sm:w-16 sm:h-16 mx-auto opacity-30 text-[#c5a059]" viewBox="0 0 100 100" fill="none" stroke="currentColor">
+            <path d="M10,10 Q50,30 20,80 M20,20 Q60,50 30,90" stroke-width="1.2" stroke-linecap="round"/>
+            <circle cx="20" cy="80" r="2.5" fill="currentColor"/>
+          </svg>
+          <p class="font-arabic text-base sm:text-2xl text-[#f2e5cb] leading-normal tracking-wide">
+            بِسْمِ اللَّهِ
+          </p>
         </div>
 
-        <svg class="w-full max-w-[160px] sm:max-w-xs mx-auto h-28 sm:h-36 opacity-25 text-[#c5a059] rotate-180" viewBox="0 0 100 100" fill="none" stroke="currentColor">
-          <path d="M10,10 Q50,30 20,80 M20,20 Q60,50 30,90" stroke-width="1.2" stroke-linecap="round"/>
-        </svg>
+        <!-- Bottom Ornamental Anchor -->
+        <div class="opacity-20 text-[#c5a059] text-center">
+          <svg class="w-10 h-10 sm:w-14 sm:h-14 mx-auto rotate-180" viewBox="0 0 100 100" fill="none" stroke="currentColor">
+            <path d="M10,10 Q50,30 20,80" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </div>
       </div>
 
-      <!-- Right Gate Door -->
-      <div class="gate-door-right w-1/2 h-full bg-[#445246] border-l border-[#c5a059]/70 shadow-2xl flex flex-col justify-between p-4 sm:p-8 pt-8 pb-20">
-        <svg class="w-full max-w-[160px] sm:max-w-xs mx-auto h-28 sm:h-36 opacity-25 text-[#c5a059] scale-x-[-1]" viewBox="0 0 100 100" fill="none" stroke="currentColor">
-          <path d="M10,10 Q50,30 20,80 M20,20 Q60,50 30,90" stroke-width="1.2" stroke-linecap="round"/>
-          <circle cx="20" cy="80" r="2.5" fill="currentColor"/>
-          <circle cx="30" cy="90" r="2.5" fill="currentColor"/>
-        </svg>
-
-        <div class="text-center">
-          <p class="font-arabic text-lg sm:text-2xl text-[#f2e5cb] leading-normal">الرَّحْمَٰنِ الرَّحِيمِ</p>
+      <!-- Right Gate Door: Text Pinned to Top -->
+      <div class="gate-door-right w-1/2 h-full bg-[#445246] border-l border-[#c5a059]/70 shadow-2xl flex flex-col justify-between p-3 sm:p-8 pt-8 sm:pt-14 pb-20">
+        <!-- Top Section: Foliage + Pinned Ar-Rahman Ar-Rahim -->
+        <div class="space-y-2 text-center">
+          <svg class="w-12 h-12 sm:w-16 sm:h-16 mx-auto opacity-30 text-[#c5a059] scale-x-[-1]" viewBox="0 0 100 100" fill="none" stroke="currentColor">
+            <path d="M10,10 Q50,30 20,80 M20,20 Q60,50 30,90" stroke-width="1.2" stroke-linecap="round"/>
+            <circle cx="20" cy="80" r="2.5" fill="currentColor"/>
+          </svg>
+          <p class="font-arabic text-base sm:text-2xl text-[#f2e5cb] leading-normal tracking-wide">
+            الرَّحْمَٰنِ الرَّحِيمِ
+          </p>
         </div>
 
-        <svg class="w-full max-w-[160px] sm:max-w-xs mx-auto h-28 sm:h-36 opacity-25 text-[#c5a059] scale-x-[-1] rotate-180" viewBox="0 0 100 100" fill="none" stroke="currentColor">
-          <path d="M10,10 Q50,30 20,80 M20,20 Q60,50 30,90" stroke-width="1.2" stroke-linecap="round"/>
-        </svg>
+        <!-- Bottom Ornamental Anchor -->
+        <div class="opacity-20 text-[#c5a059] text-center">
+          <svg class="w-10 h-10 sm:w-14 sm:h-14 mx-auto scale-x-[-1] rotate-180" viewBox="0 0 100 100" fill="none" stroke="currentColor">
+            <path d="M10,10 Q50,30 20,80" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </div>
       </div>
 
-      <!-- Center Gold Scalloped Royal Badge (Proportional sizing) -->
-      <button id="centerBadge" onclick="openGate()" class="absolute top-[48%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 group cursor-pointer" aria-label="Tap to open invitation">
-        <div class="relative w-36 h-48 sm:w-44 sm:h-56 bg-[#2a342b] rounded-full border border-[#c5a059] shadow-2xl flex flex-col items-center justify-center p-3 transition-transform duration-300 group-hover:scale-105">
+      <!-- Center Gold Scalloped Royal Badge (Positioned Safely in Lower Half) -->
+      <button id="centerBadge" onclick="openGate()" class="absolute top-[52%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 group cursor-pointer" aria-label="Tap to open invitation">
+        <div class="relative w-32 h-44 sm:w-44 sm:h-56 bg-[#2a342b] rounded-full border border-[#c5a059] shadow-2xl flex flex-col items-center justify-center p-3 transition-transform duration-300 group-hover:scale-105">
           <div class="absolute inset-1.5 rounded-full border border-dashed border-[#c5a059]/60 pointer-events-none"></div>
           
-          <span class="text-[10px] text-[#c5a059]">✦</span>
-          <span class="font-cormorant italic text-3xl sm:text-4xl font-light text-[#f2e5cb] my-1 tracking-wide">A <span class="font-brush text-2xl sm:text-3xl text-[#c5a059]">&amp;</span> S</span>
-          <div class="h-[1px] w-10 bg-[#c5a059]/50 my-1"></div>
-          <p class="font-cinzel text-[9px] sm:text-[11px] tracking-[0.25em] text-[#c8d2c8] uppercase font-semibold mt-1">
+          <span class="text-[9px] text-[#c5a059]">✦</span>
+          <span class="font-cormorant italic text-2xl sm:text-4xl font-light text-[#f2e5cb] my-0.5 tracking-wide">A <span class="font-brush text-xl sm:text-3xl text-[#c5a059]">&amp;</span> S</span>
+          <div class="h-[1px] w-8 sm:w-12 bg-[#c5a059]/50 my-1"></div>
+          <p class="font-cinzel text-[8px] sm:text-[10px] tracking-[0.22em] text-[#c8d2c8] uppercase font-semibold mt-0.5">
             Tap To Open
           </p>
-          <p class="font-arabic text-[11px] text-[#c5a059]">افتح الدعوة</p>
-          <span class="text-[10px] text-[#c5a059] mt-1">✦</span>
+          <p class="font-arabic text-[10px] text-[#c5a059] leading-tight">افتح الدعوة</p>
+          <span class="text-[9px] text-[#c5a059] mt-0.5">✦</span>
         </div>
       </button>
 
-      <!-- Bottom Tagline (Clear spacing below badge) -->
+      <!-- Bottom Tagline -->
       <div class="absolute bottom-4 sm:bottom-6 inset-x-0 z-20 flex justify-center px-4 pointer-events-none">
         <div class="bg-[#1f2720]/90 border border-[#c5a059]/40 backdrop-blur-md px-4 py-1.5 rounded-full shadow-lg">
-          <p class="font-cinzel text-[9px] sm:text-xs tracking-[0.2em] text-[#f2e5cb] uppercase font-medium text-center">
+          <p class="font-cinzel text-[9px] sm:text-xs tracking-[0.18em] text-[#f2e5cb] uppercase font-medium text-center">
             Wedding of Muhammed Ajas &amp; Saniya Sabah
           </p>
         </div>
@@ -480,7 +486,7 @@
     }
     floatingMusicToggle.onclick = toggleAudio;
 
-    // Gate Unfolding Animation (iOS WebKit Optimized)
+    // Gate Unfolding Animation
     function openGate() {
       coverContainer.classList.add("opened");
       playAudioSafe();
@@ -525,7 +531,7 @@
       ctx.closePath();
     }
 
-    // Canvas Card Generator (Matching Sage Green & Gold Theme)
+    // Canvas Card Generator (Sage & Gold Theme)
     async function generateCardCanvas() {
       const canvas = document.createElement("canvas");
       const ctx = canvas.getContext("2d");
@@ -705,7 +711,7 @@
       return canvas;
     }
 
-    // Direct Browser Download & iOS Share
+    // Direct Browser Download & Mobile Share
     async function downloadInvitationCard() {
       const btnText = document.getElementById("dlBtnText");
       const btnSubtext = document.getElementById("dlBtnSubtext");
@@ -723,6 +729,7 @@
         await document.fonts.ready;
 
         const canvas = await generateCardCanvas();
+
         const blob = await new Promise((resolve) => canvas.toBlob(resolve, "image/png", 1.0));
         const filename = "Wedding-Invitation-Muhammed-Ajas-and-Saniya-Sabah.png";
         const file = new File([blob], filename, { type: "image/png" });
